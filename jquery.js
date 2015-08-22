@@ -27,10 +27,14 @@ function searchCallback(data) {
 function populateDropdown(data){
 	data = data['report']['foods'];
 	console.log('in populateDropdown' + data.length);
-	var position = $('#populateDropdown');
-	for(var i =0; i=data.length; i++){
-		position.append($('<option>'));
-		console.log(i);
+	for(var i =0; i<data.length; i++){
+		var option = $('<option>');
+		option.attr('id', i);
+		option.html(data[i]['name']);
+		// console.log(option);
+		$('#dropdown').append(option);
+		// console.log(data[i]['name']);
+
 	}
 }
 
