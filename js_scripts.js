@@ -53,11 +53,10 @@ function stringMatch(data){
 		incr++;
 
 
-		var option = $('<option>');
 		var newP = $('<p>');
 		var link = $('<a>'); //Anchor tag to trigger modal
 
-		option.attr({'id': data[index]['ndbno'], 'class':'ndbno', 'value':index});
+		link.attr({'id': data[index]['ndbno'], 'class':'ndbno', 'value':index});
 
 		link.text(data[index]['name']);
 		link.attr({'data-toggle': "modal", 'href': "#myModal"});
@@ -71,9 +70,6 @@ function stringMatch(data){
 
 
 	}) //End forEach loop
-
-	dataObject['item'] = dataArray;
-	console.log(dataObject['0']);
 
 
 	if(incr==0){

@@ -6,15 +6,6 @@ var carb = "Carbohydrate, by difference";
 var kcal = "Energy";
 var food;
 
-// Handlebars variables
-
-
-// Handlebars variables END
-
-
-// Use this function to do stuff with your results. 
-// It is called after 'search' is executed.
-
 
 $(document).ready(function() {
 
@@ -40,9 +31,11 @@ $(document).ready(function() {
   	}); //End .change function
 
 
-// console.log(anchor);
+	$('#results').on('click', '.ndbno', function(){
+		var ndbno = $(this).attr('id');
+		getNutrients(ndbno);
+	})
 
-	  // $("#results").html(template(data));
 
 });
 
