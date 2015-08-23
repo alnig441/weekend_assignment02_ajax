@@ -33,18 +33,18 @@ function stringMatch(data){
 	var string = $('#search').val();
 	console.log('in stringMatch looking for items containing ' + string);
 	
-	var x = [];
+	var food = [];
 	data = data['report']['foods'];
-	$('#dropdown').children().remove();
+	$('.ndbno').remove();
 
 	for(var i = 0; i < data.length; i ++){
-		x.push(data[i]['name']);
+		food.push(data[i]['name']);
 	}
 	var incr = 0;
 
-	x.forEach(function(element, index){
+	food.forEach(function(element, index){
 
-		if(element.match(string)!=null){
+		if(element.match(string.toLowerCase())!=null){
 		incr++;
 		var option = $('<option>');
 
@@ -62,6 +62,6 @@ function stringMatch(data){
 		}
 }	//END STRINGMATCH 
 
-function getNutrients(){
-	console.log('in getNutrients');
+function getNutrients(ndbno){
+	console.log('in getNutrients' + ndbno);
 }

@@ -15,10 +15,23 @@ $(document).ready(function() {
 		search();  
 	})
 
-	$('#dropdown').on('click', '.ndbno', function(){
-		var x = $(this).attr('id');
-		console.log(x);
-	})
+	$( ".dropdown" ).change(function() {
+ 	 alert( "Handler for .change() called." );
+	});
+
+
+
+	$("#dropdown").change(function () {
+    	var str = "";
+
+    	$( "#dropdown option:selected" ).each(function() {
+    		// console.log($(this).attr('id'));	
+      		var ndbno = $(this).attr('id');
+      		getNutrients(ndbno);
+    	});
+
+  	}); //End .change function
+
 
 });
 
