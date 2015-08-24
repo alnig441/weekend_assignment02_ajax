@@ -19,20 +19,21 @@ $(document).ready(function() {
 
 
 
-	$("#dropdown").change(function () {
-    	var str = "";
+	// $("#dropdown").change(function () {
+ //    	var str = "";
 
-    	$( "#dropdown option:selected" ).each(function() {
-    		// console.log($(this).attr('id'));	
-      		var ndbno = $(this).attr('id');
-      		getNutrients(ndbno);
-    	});
+ //    	$( "#dropdown option:selected" ).each(function() {
+ //    		// console.log($(this).attr('id'));	
+ //      		var ndbno = $(this).attr('id');
+ //      		getNutrients(ndbno);
+ //    	});
 
-  	}); //End .change function
+ //  	}); //End .change function
 
 
 	$('#results').on('click', '.ndbno', function(){
 		var ndbno = $(this).attr('id');
+		getFood(ndbno);
 		getNutrients(ndbno);
 	})
 
