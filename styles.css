@@ -1,0 +1,18 @@
+body{
+	width: 50%;
+	margin: auto;
+}
+
+.selector {
+	display: block;
+	border: 1px solid;
+	border-radius: 5px;
+	text-align: center;
+	background-color: lightgray;
+}
+
+#tip {
+	text-decoration: none;
+}
+
+

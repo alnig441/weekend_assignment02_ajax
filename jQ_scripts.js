@@ -5,36 +5,33 @@ var sugar = "Sugars, total";
 var carb = "Carbohydrate, by difference";
 var kcal = "Energy";
 var food;
-
+var source1;
 
 $(document).ready(function() {
+
+
+
+    $('[data-toggle="tooltip"]').tooltip;   
+
 
 	$('#go').on('click', function(e){
 		search();  
 	})
 
-	$( ".dropdown" ).change(function() {
- 	 alert( "Handler for .change() called." );
-	});
-
-
-
-	// $("#dropdown").change(function () {
- //    	var str = "";
-
- //    	$( "#dropdown option:selected" ).each(function() {
- //    		// console.log($(this).attr('id'));	
- //      		var ndbno = $(this).attr('id');
- //      		getNutrients(ndbno);
- //    	});
-
- //  	}); //End .change function
 
 
 	$('#results').on('click', '.ndbno', function(){
 		var ndbno = $(this).attr('id');
-		getFood(ndbno);
-		getNutrients(ndbno);
+		$('.modal-body').append($('<script id="some-template1" type="text/x-handlebars-template">'));
+		console.log($('#some-template1'));
+		source1 = $("#some-template1").html();
+		// console.log(source1);
+
+			getNutrients(ndbno);
+
+
+		
+		
 	})
 
 

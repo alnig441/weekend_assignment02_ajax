@@ -10,8 +10,10 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	
 	<script type="text/javascript" src='jquery-1.11.3.min.js'></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="text/javascript" src='handlebars-v3.0.3.js'></script>
 	<script type="text/javascript" src='js_scripts.js'></script>
 	<script type="text/javascript" src='getNutrients.js'></script>
@@ -26,8 +28,8 @@
 <body>
 
 	<div class='selector'>
-
-	<input type="text" id="search" />
+		<a id='tip' href="#" data-toggle='tooltip' title='Search babyfoods for their contents of main nutrients'>Babyfood Search</a>
+	<input type="text" id="search"/>
 	<input type="button" id="go" value="go" />
 
 
@@ -43,42 +45,40 @@
 	        <h4 class="modal-title">Nutrient Contents</h4>
 	      </div>
 	      <div class="modal-body">
-	        <script id="some-template1" type="text/x-handlebars-template">
+	 	 <script id="some-template2" type="text/x-handlebars-template">
 				  <table>
-				    <thead>
+				  	<thead>
 				      <th>Name of Food</th>
+				      <th></th>
 				      <th>Measure</th>
 				      <th>Weight</th>
-				    </thead>
-				    <tbody>
-				      {{#each this}}
-				        <tr>
-				          <td>{{name}}</td>
+				  	</thead>
+				  		<tbody>
+				  		<tr>
+				          <td>{{name}}</td>	
+				          <td></td>
 				          <td>{{measure}}</td>
 				          <td>{{weight}}</td>
-				        </tr>
-				      {{/each}}
-				    </tbody>
-				  </table>
-			</script>
-			<script id="some-template2" type="text/x-handlebars-template">
-				  <table>
+				  		</tr>
+				  		</tbody>
 		    		<thead>
 				      <th>Nutrient</th>
-				      <th>Amount (grams)</th>
+				      <th></th>
+				      <th>Amount (in g)</th>
 				      <th>100 g equivalent</th>
 				    </thead>
 				    <tbody>
-				      {{#each this}}
+				      {{#each this.nutrients}}
 				        <tr>
 				          <td>{{nutrient}}</td>
+				          <td></td>
 				          <td>{{value}}</td>
 				          <td>{{gm}}</td>
 				        </tr>
 				      {{/each}}
 				    </tbody>
 				  </table>
-			</script>
+			 </script>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
