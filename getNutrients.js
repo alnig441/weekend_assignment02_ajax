@@ -4,7 +4,6 @@ function getNutrients(ndbno){
 	console.log('getNutrients for ' + ndbno );
 
 
-  	var source2   = $("#some-template2").html();
   	var template2 = Handlebars.compile(source2);
 
 		var jqxhr = $.ajax ({
@@ -16,6 +15,7 @@ function getNutrients(ndbno){
 		}).always(function() {
 			console.log('Ajax attempt complete.');
 		}).done(function(data, textStatus, jqXHR) {
+			console.log(template2);
 			console.log(data['report']['foods']['0']['nutrients']['0']);
 			$(".modal-body").html(template2(data['report']['foods']['0']));
 		}).fail(function(jqXHR, textStatus, errorThrown) {
